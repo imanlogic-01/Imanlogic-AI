@@ -1,0 +1,1842 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Call Answering &amp; AI Employees for UK Businesses – ImanLogic Digital</title>
+  <meta name="description" content="Never miss a call or lead again. ImanLogic AI employees answer calls, reply to texts, qualify leads and book appointments 24/7. Installed in 7 days from £399/month.">
+  <link rel="icon" href="https://imanlogic.com/wp-content/uploads/Site-Icons-150x150.webp">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2M6V79H761');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d0f628cf-26bf-473d-81b9-50e422c51521_3840w.png" fetchpriority="high">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { ink: '#0a0a0c', bone: '#f4f2ef', petal: '#f5b8d0', core: '#ffd9e8', rose: '#F43F5E', paper: '#f4efe7', pitch: '#050505' }
+        }
+      }
+    };
+  </script>
+
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --ink: #0a0a0c;
+      --bone: #f4f2ef;
+      --petal: #f5b8d0;
+      --core: #ffd9e8;
+      --rose: #F43F5E;
+      --paper: #f4efe7;
+      --pitch: #050505;
+      --nav-h: 64px;
+      --lb: 0.000314vh;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0a0a0c;
+      color: #f4f2ef;
+      font-family: Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(245, 184, 208, 0.2); color: inherit; }
+    [hidden] { display: none !important; }
+
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid #f5b8d0;
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+    .on-light a:focus-visible, .on-light button:focus-visible { outline-color: #050505; }
+
+    .skip-link {
+      position: absolute; left: 16px; top: -48px; z-index: 100;
+      padding: 10px 16px; border-radius: 999px;
+      background: #f4f2ef; color: #050505; font-size: 14px; font-weight: 500;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* ---------- Buttons ---------- */
+    .btn-light, .btn-ghost, .btn-dark, .btn-rose {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 0 22px; border-radius: 999px;
+      font-size: 15px; font-weight: 500; white-space: nowrap;
+      transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+    }
+    .btn-light { background: #f4f2ef; color: #050505; }
+    .btn-light:hover { background: #ffd9e8; }
+    .btn-ghost {
+      color: #f4f2ef; border: 1px solid rgba(244, 242, 239, 0.28);
+      background: rgba(10, 10, 12, 0.55);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .btn-ghost:hover { border-color: #f5b8d0; color: #ffd9e8; }
+    .btn-dark { background: #050505; color: #f4f2ef; }
+    .btn-dark:hover { background: #F43F5E; color: #050505; }
+    .btn-rose { background: #F43F5E; color: #050505; }
+    .btn-rose:hover { background: #ffd9e8; }
+
+    /* ---------- Fixed background ---------- */
+    #particlesBg {
+      position: fixed; inset: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 60;
+      height: var(--nav-h);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(10, 10, 12, 0.55);
+      border-bottom: 1px solid rgba(244, 242, 239, 0.06);
+    }
+    .brand-logo { display: block; height: 56px; width: auto; }
+    nav a, nav button, footer a { display: inline-flex; will-change: transform; }
+    .nav-link {
+      position: relative; align-items: center;
+      padding: 8px 11px; border-radius: 999px;
+      color: rgba(244, 242, 239, 0.66);
+      transition: color .3s ease, background-color .3s ease;
+    }
+    .nav-link:hover { color: #f4f2ef; background: rgba(244, 242, 239, 0.06); }
+    .nav-link[aria-current="true"] { color: #f4f2ef; }
+    .nav-link[aria-current="true"]::after {
+      content: ""; position: absolute; left: 50%; bottom: 2px;
+      width: 4px; height: 4px; margin-left: -2px; border-radius: 50%;
+      background: #f5b8d0; box-shadow: 0 0 10px #f5b8d0;
+    }
+
+    /* ---------- Cinematic ---------- */
+    #cinematic {
+      position: relative;
+      height: 820vh;
+      margin-top: calc(var(--nav-h) * -1);
+    }
+    #pinStage {
+      position: sticky; top: 0;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 1;
+      isolation: isolate;
+    }
+    #bgLayer {
+      position: absolute; inset: -80px 0 -80px 0; z-index: 0;
+      background:
+        radial-gradient(55% 60% at 50% 48%, rgba(62, 44, 54, 0.9) 0%, rgba(22, 17, 22, 0.75) 55%, rgba(10, 10, 12, 0) 100%),
+        radial-gradient(40% 35% at 18% 20%, rgba(245, 184, 208, 0.10), transparent 70%),
+        radial-gradient(38% 40% at 85% 85%, rgba(244, 63, 94, 0.10), transparent 70%);
+      will-change: transform;
+    }
+    #bouquetWrap {
+      position: absolute; inset: 0; z-index: 2;
+    }
+    /* Transparent cut-out of the AI employee: show the whole figure behind the copy */
+    #bouquet {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: 50% 55%;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+    #vignette {
+      position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background: radial-gradient(ellipse 75% 80% at 50% 50%, transparent 40%, rgba(10, 10, 12, 0.82) 100%);
+    }
+    #bootShade {
+      position: absolute; inset: 0; z-index: 4; pointer-events: none;
+      background: #0a0a0c; opacity: 0.18; will-change: opacity;
+    }
+    #petalCanvas {
+      position: absolute; inset: 0; z-index: 5;
+      width: 100%; height: 100%;
+      opacity: 0.85; pointer-events: none;
+    }
+    #gradeWash {
+      position: absolute; inset: 0; z-index: 6; pointer-events: none;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(60% 55% at 28% 30%, rgba(245, 184, 208, 0.42), transparent 70%),
+        radial-gradient(50% 45% at 78% 72%, rgba(255, 217, 232, 0.30), transparent 70%),
+        radial-gradient(120% 80% at 50% 115%, rgba(244, 63, 94, 0.22), transparent 60%);
+      opacity: 0.25; will-change: opacity;
+    }
+    #lbTop, #lbBot {
+      position: absolute; left: 0; right: 0; z-index: 20;
+      height: 0.000314vh; background: #050505; pointer-events: none;
+    }
+    #lbTop { top: 0; }
+    #lbBot { bottom: 0; }
+
+    .bracket {
+      position: absolute; z-index: 30; width: 28px; height: 28px;
+      border-color: #f4f2ef; border-style: solid; border-width: 0;
+      mix-blend-mode: difference; pointer-events: none; opacity: .85;
+    }
+    .bracket.tl { top: calc(max(var(--lb), var(--nav-h)) + 20px); left: 24px; border-top-width: 1.5px; border-left-width: 1.5px; }
+    .bracket.tr { top: calc(max(var(--lb), var(--nav-h)) + 20px); right: 24px; border-top-width: 1.5px; border-right-width: 1.5px; }
+    .bracket.bl { bottom: calc(var(--lb) + 24px); left: 24px; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+    .bracket.br { bottom: calc(var(--lb) + 24px); right: 24px; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+    .frame-meta {
+      position: absolute; z-index: 30; top: calc(max(var(--lb), var(--nav-h)) + 26px); left: 64px; right: 64px;
+      display: flex; justify-content: space-between;
+      color: #f4f2ef; mix-blend-mode: difference; pointer-events: none;
+    }
+
+    .beat {
+      position: absolute; inset: 0; z-index: 40;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0 24px; text-align: center;
+      color: #f4f2ef;
+      text-shadow: 0 2px 32px rgba(10, 10, 12, 0.6), 0 1px 3px rgba(10, 10, 12, 0.4);
+      pointer-events: none; opacity: 0; visibility: hidden;
+      will-change: opacity, transform, filter;
+    }
+    /* Darkens only the area behind the copy so the AI employee stays visible around it */
+    #textScrim {
+      position: absolute; inset: 0; z-index: 7; pointer-events: none;
+      background: radial-gradient(ellipse 62% 34% at 50% 42%, rgba(10, 10, 12, 0.62) 0%, rgba(10, 10, 12, 0.34) 45%, transparent 75%);
+    }
+    .beat.has-cta { padding-bottom: 20vh; }
+    .beat-actions {
+      position: absolute; z-index: 42; left: 0; right: 0;
+      bottom: calc(var(--lb) + 132px);
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      padding: 0 20px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      will-change: opacity, transform;
+    }
+
+    .hud {
+      position: absolute; z-index: 45; left: 50%;
+      bottom: calc(var(--lb) + 20px);
+      transform: translateX(-50%);
+      width: min(920px, calc(100% - 32px));
+      display: flex; align-items: center; gap: 18px;
+      padding: 10px 14px 10px 18px; border-radius: 999px;
+      background: rgba(10, 10, 12, 0.55);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 242, 239, 0.08);
+    }
+    .timeline { position: relative; flex: 1; height: 2px; border-radius: 2px; background: rgba(244, 242, 239, 0.16); overflow: hidden; }
+    #timelineFill { position: absolute; inset: 0 auto 0 0; width: 0%; background: linear-gradient(90deg, #f5b8d0, #ffd9e8); box-shadow: 0 0 12px #f5b8d0; }
+    .rec-dot { width: 7px; height: 7px; border-radius: 50%; background: #F43F5E; box-shadow: 0 0 10px #F43F5E; animation: rec 1.6s ease-in-out infinite; }
+    @keyframes rec { 50% { opacity: .25; } }
+    .hud-dot { position: relative; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; cursor: pointer; }
+    .hud-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: rgba(244, 242, 239, 0.3); transition: all .35s cubic-bezier(.16,1,.3,1); }
+    .hud-dot.is-active::before { width: 18px; border-radius: 6px; background: #f5b8d0; box-shadow: 0 0 10px rgba(245,184,208,.8); }
+
+    #scrollHint { position: absolute; z-index: 44; left: 50%; bottom: calc(var(--lb) + 76px); transform: translateX(-50%); color: #f4f2ef; mix-blend-mode: difference; pointer-events: none; }
+    .hint-line { width: 1px; height: 22px; background: linear-gradient(#f4f2ef, transparent); margin: 8px auto 0; animation: hint 2.2s cubic-bezier(.65,0,.35,1) infinite; transform-origin: top; }
+    @keyframes hint { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+    /* ---------- Shared ---------- */
+    section[id] { scroll-margin-top: var(--nav-h); }
+    .reveal-line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+    .reveal-line > span { display: block; will-change: transform; }
+
+    .fade-card {
+      position: relative;
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+      transition: transform .7s cubic-bezier(.16, 1, .3, 1), box-shadow .7s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .fade-card.is-tilting { transition: transform .12s linear, box-shadow .7s ease; }
+    .card-glare {
+      position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+      background: radial-gradient(460px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 217, 232, 0.16), transparent 45%);
+      opacity: 0; transition: opacity .4s ease;
+    }
+    .on-light .card-glare { background: radial-gradient(460px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.55), transparent 45%); }
+    .fade-card:hover .card-glare { opacity: 1; }
+
+    /* ---------- Example cards ---------- */
+    .play-ring {
+      display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(244, 242, 239, 0.92); color: #050505;
+      box-shadow: 0 0 0 10px rgba(245, 184, 208, 0.18), 0 0 40px rgba(245, 184, 208, 0.55);
+      transition: transform .4s cubic-bezier(.16,1,.3,1), background-color .3s ease;
+    }
+    .example-card:hover .play-ring { transform: scale(1.08); background: #ffd9e8; }
+    .example-player { position: absolute; inset: 0; z-index: 20; background: #050505; }
+    .example-player video { width: 100%; height: 100%; object-fit: contain; background: #050505; }
+
+    /* ---------- Calculator ---------- */
+    .range { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: transparent; cursor: pointer; }
+    .range::-webkit-slider-runnable-track {
+      height: 4px; border-radius: 4px;
+      background: linear-gradient(90deg, #f5b8d0 var(--fill, 50%), rgba(244, 242, 239, 0.16) var(--fill, 50%));
+    }
+    .range::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 22px; height: 22px; margin-top: -9px; border-radius: 50%;
+      background: #ffd9e8; box-shadow: 0 0 0 6px rgba(245, 184, 208, 0.18), 0 0 18px rgba(245, 184, 208, 0.7);
+    }
+    .range::-moz-range-track { height: 4px; border-radius: 4px; background: rgba(244, 242, 239, 0.16); }
+    .range::-moz-range-progress { height: 4px; border-radius: 4px; background: #f5b8d0; }
+    .range::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: 50%; background: #ffd9e8; box-shadow: 0 0 18px rgba(245, 184, 208, 0.7); }
+    .num-input::-webkit-outer-spin-button, .num-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .num-input { -moz-appearance: textfield; }
+
+    /* ---------- Channel tabs ---------- */
+    .tab-btn {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+      padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 500;
+      color: rgba(244, 242, 239, 0.7); border: 1px solid rgba(244, 242, 239, 0.12);
+      transition: all .35s cubic-bezier(.16,1,.3,1); white-space: nowrap;
+    }
+    .tab-btn:hover { color: #f4f2ef; border-color: rgba(244, 242, 239, 0.3); }
+    .tab-btn[aria-selected="true"] { background: #f4f2ef; color: #050505; border-color: #f4f2ef; }
+
+    /* ---------- Light sections ---------- */
+    #noema-manifesto {
+      background:
+        radial-gradient(45% 55% at 12% 18%, rgba(245, 184, 208, 0.55), transparent 70%),
+        radial-gradient(40% 50% at 88% 30%, rgba(255, 217, 232, 0.7), transparent 70%),
+        radial-gradient(50% 45% at 70% 92%, rgba(244, 63, 94, 0.14), transparent 70%),
+        radial-gradient(60% 60% at 30% 100%, rgba(226, 214, 196, 0.8), transparent 70%),
+        #f4efe7;
+      color: #050505;
+    }
+    .m-word { display: inline-block; opacity: 0.12; will-change: opacity; }
+    .m-word.accent { font-style: italic; font-weight: 400; }
+
+    #noema-board, #noema-support { background: #f4efe7; color: #050505; }
+    #noema-board .giant, #noema-support .giant {
+      position: absolute; left: 50%; z-index: 0;
+      transform: translateX(-50%);
+      font-size: 28vw; line-height: .78; font-weight: 600; letter-spacing: -0.06em;
+      color: #050505; opacity: 0.18;
+      white-space: nowrap; pointer-events: none; user-select: none;
+    }
+
+    .widget-slot chat-widget { display: block; position: relative; }
+
+    @media (max-width: 767px) {
+      #bouquetWrap { left: -25%; right: -65%; }
+      #textScrim { background: radial-gradient(ellipse 95% 30% at 50% 40%, rgba(10, 10, 12, 0.66) 0%, rgba(10, 10, 12, 0.36) 50%, transparent 78%); }
+      .frame-meta { left: 56px; right: 56px; }
+      .frame-meta .meta-right { display: none; }
+      .hud { gap: 10px; padding: 8px 10px 8px 14px; }
+      #scrollHint { display: none; }
+      .beat-actions { bottom: calc(var(--lb) + 92px); }
+      .btn-light, .btn-ghost, .btn-dark, .btn-rose { font-size: 14px; padding: 0 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-card, .fade-card.is-tilting { transition: none; }
+      .rec-dot, .hint-line { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <a href="#collection" class="skip-link">Skip to content</a>
+  <canvas id="particlesBg" aria-hidden="true"></canvas>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="mx-auto flex h-full max-w-[1440px] items-center justify-between gap-4 px-5 md:px-10">
+      <a href="#cinematic" class="flex shrink-0 items-center">
+        <img src="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6a42c7be0c7afddf14836aea.png" alt="ImanLogic Digital — home" width="400" height="160" class="brand-logo">
+      </a>
+
+      <nav aria-label="Primary" class="flex items-center gap-2">
+        <ul class="hidden items-center gap-0.5 text-[13px] font-medium xl:flex">
+          <li><a class="nav-link" href="#collection">Examples</a></li>
+          <li><a class="nav-link" href="#calculator">Calculator</a></li>
+          <li><a class="nav-link" href="#noema-manifesto">Why ImanLogic</a></li>
+          <li><a class="nav-link" href="#integration">AI Texting</a></li>
+          <li><a class="nav-link" href="#noema-board">Features</a></li>
+          <li><a class="nav-link" href="#noema-support">Demo</a></li>
+        </ul>
+        <a href="tel:+447700107355" class="hidden items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-[#f4f2ef]/80 transition-colors hover:text-[#ffd9e8] lg:inline-flex">
+          <iconify-icon icon="solar:phone-calling-linear" width="16" aria-hidden="true"></iconify-icon>
+          <span>Speak to AI <span class="tabular-nums">07700 107355</span></span>
+        </a>
+        <a href="get-started.html" class="ml-1 hidden items-center gap-2 rounded-full bg-[#f4f2ef] px-4 py-2.5 text-[13px] font-medium text-[#050505] transition-colors hover:bg-[#ffd9e8] sm:inline-flex">
+          Get My AI Employee
+          <iconify-icon icon="solar:arrow-right-linear" width="16" aria-hidden="true"></iconify-icon>
+        </a>
+        <button id="menuBtn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 xl:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <span class="flex w-[18px] flex-col gap-[5px]" aria-hidden="true">
+            <span class="block h-[1.5px] w-full bg-[#f4f2ef]"></span>
+            <span class="block h-[1.5px] w-2/3 bg-[#f4f2ef]"></span>
+          </span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" hidden class="border-t border-white/5 bg-[rgba(10,10,12,0.94)] px-5 pb-6 pt-2 backdrop-blur-[12px] xl:hidden">
+      <ul class="grid gap-1 text-[17px]">
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#collection">Examples</a></li>
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#calculator">Calculator</a></li>
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#noema-manifesto">Why ImanLogic</a></li>
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#integration">AI Texting</a></li>
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#noema-board">Features</a></li>
+        <li><a class="block rounded-xl px-3 py-3 hover:bg-white/5" href="#noema-support">Demo</a></li>
+      </ul>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <a href="tel:+447700107355" class="btn-ghost">
+          <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+          Speak to AI 07700 107355
+        </a>
+        <a href="get-started.html" class="btn-light">
+          Get My AI Employee
+          <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== 1 · HERO FILM ===================== -->
+    <section id="cinematic" aria-label="ImanLogic AI Employee — introduction">
+      <div id="pinStage">
+        <div id="bgLayer" aria-hidden="true"></div>
+        <div id="bouquetWrap" aria-hidden="true">
+          <img id="bouquet"
+               src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d0f628cf-26bf-473d-81b9-50e422c51521_3840w.png"
+               alt="" width="2464" height="1968" fetchpriority="high" decoding="async">
+        </div>
+        <div id="vignette" aria-hidden="true"></div>
+        <div id="bootShade" aria-hidden="true"></div>
+        <canvas id="petalCanvas" aria-hidden="true"></canvas>
+        <div id="gradeWash" aria-hidden="true"></div>
+        <div id="textScrim" aria-hidden="true"></div>
+
+        <div id="lbTop" aria-hidden="true"></div>
+        <div id="lbBot" aria-hidden="true"></div>
+
+        <span class="bracket tl" aria-hidden="true"></span>
+        <span class="bracket tr" aria-hidden="true"></span>
+        <span class="bracket bl" aria-hidden="true"></span>
+        <span class="bracket br" aria-hidden="true"></span>
+        <div class="frame-meta text-[12px] font-medium uppercase tracking-[0.28em]" aria-hidden="true">
+          <span>AI Employee · Scene <span id="sceneNo">01</span></span>
+          <span class="meta-right">Live 24/7 · UK</span>
+        </div>
+
+        <!-- Copy beats -->
+        <div class="beat has-cta" data-in="0" data-out="0.13">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.36em]">ImanLogic Digital · AI Employees</p>
+          <h1 class="max-w-[13ch] text-[clamp(2.75rem,7.4vw,7.25rem)] font-medium leading-[0.92] tracking-tighter">Never miss a call or lead again.</h1>
+        </div>
+        <div class="beat" data-in="0.13" data-out="0.27">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.42em]">9:47 pm · You're on a job</p>
+          <h2 class="max-w-[12ch] text-[clamp(2.5rem,7.5vw,7rem)] font-medium leading-[0.92] tracking-tighter">The phone rings.</h2>
+        </div>
+        <div class="beat" data-in="0.27" data-out="0.41">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.42em]">The cost of voicemail</p>
+          <h2 class="max-w-[15ch] text-[clamp(2.25rem,6.2vw,6rem)] font-medium leading-[0.95] tracking-tighter">67% of callers hang up and go elsewhere.</h2>
+        </div>
+        <div class="beat" data-in="0.41" data-out="0.55">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.42em]">Where business happens</p>
+          <h2 class="max-w-[14ch] text-[clamp(2.25rem,6.2vw,6rem)] font-medium leading-[0.95] tracking-tighter">92% of business happens on the phone.</h2>
+        </div>
+        <div class="beat" data-in="0.55" data-out="0.69">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.42em]">Then everything changed</p>
+          <h2 class="max-w-[13ch] text-[clamp(2.5rem,7vw,6.75rem)] font-medium leading-[0.92] tracking-tighter">Your AI employee picked up.</h2>
+        </div>
+        <div class="beat" data-in="0.69" data-out="0.84">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.42em]">Calls · Texts · Webchat · Ads</p>
+          <h2 class="max-w-[15ch] text-[clamp(2.25rem,6.2vw,6rem)] font-medium leading-[0.95] tracking-tighter">It qualifies, books, and follows up. 24/7.</h2>
+        </div>
+        <div class="beat has-cta" data-in="0.84" data-out="1">
+          <p class="mb-5 text-[12px] font-medium uppercase tracking-[0.36em]">AI Employee System · from £399/month</p>
+          <h2 class="text-[clamp(2.75rem,9vw,8.5rem)] font-medium leading-[0.9] tracking-tighter">Installed in 7&nbsp;days.</h2>
+        </div>
+
+        <div class="beat-actions" data-for="0">
+          <a href="tel:+447700107355" class="btn-light">
+            <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+            Hear a live AI demo: 07700 107355
+          </a>
+          <a href="get-started.html" class="btn-ghost">
+            Get My AI Employee
+            <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+          </a>
+        </div>
+        <div class="beat-actions" data-for="6">
+          <a href="get-started.html" class="btn-light">
+            Get Started — £399/month
+            <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+          </a>
+          <a href="tel:+447700107355" class="btn-ghost">
+            <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+            Demo the AI Employee
+          </a>
+        </div>
+
+        <div id="scrollHint" class="text-center text-[12px] font-medium uppercase tracking-[0.36em]" aria-hidden="true">
+          Scroll
+          <div class="hint-line"></div>
+        </div>
+
+        <!-- HUD -->
+        <div class="hud text-[#f4f2ef]">
+          <div class="flex shrink-0 items-center gap-2.5 text-[12px] font-medium uppercase tabular-nums tracking-[0.2em]">
+            <span class="rec-dot" aria-hidden="true"></span>
+            <span class="hidden sm:inline">Live</span>
+            <span id="timeLabel" class="inline-block min-w-[3.6em] text-right normal-case">0s</span>
+            <span class="normal-case text-[#f4f2ef]/45">/ 12.75s</span>
+          </div>
+          <div class="timeline" role="progressbar" aria-label="Story progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="timelineBar">
+            <div id="timelineFill"></div>
+          </div>
+          <div class="hud-dots hidden shrink-0 items-center md:flex" role="group" aria-label="Jump to scene">
+            <button type="button" class="hud-dot is-active" data-beat="0" aria-label="Scene 1: Never miss a call"></button>
+            <button type="button" class="hud-dot" data-beat="1" aria-label="Scene 2: The phone rings"></button>
+            <button type="button" class="hud-dot" data-beat="2" aria-label="Scene 3: Callers hang up"></button>
+            <button type="button" class="hud-dot" data-beat="3" aria-label="Scene 4: Business happens on the phone"></button>
+            <button type="button" class="hud-dot" data-beat="4" aria-label="Scene 5: Your AI employee picks up"></button>
+            <button type="button" class="hud-dot" data-beat="5" aria-label="Scene 6: Qualifies and books 24/7"></button>
+            <button type="button" class="hud-dot" data-beat="6" aria-label="Scene 7: Installed in 7 days"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2 · EXAMPLES ===================== -->
+    <section id="collection" class="relative px-5 py-28 md:px-10 md:py-40">
+      <div class="mx-auto max-w-[1440px]">
+        <div class="mb-16 flex flex-col justify-between gap-10 md:mb-24 md:flex-row md:items-end">
+          <div data-reveal>
+            <p class="mb-6 flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.32em] text-[#f5b8d0]">
+              <span class="h-px w-8 bg-[#f5b8d0]" aria-hidden="true"></span>An AI receptionist for any business
+            </p>
+            <h2 class="text-[clamp(2.75rem,6.4vw,6rem)] font-medium leading-[0.92] tracking-tighter">
+              <span class="reveal-line"><span>Versatile AI, tailored</span></span>
+              <span class="reveal-line"><span class="text-[#f4f2ef]/40">to your business.</span></span>
+            </h2>
+          </div>
+          <div class="max-w-[44ch]">
+            <p class="text-[16px] leading-relaxed text-[#f4f2ef]/65 md:text-[17px]">
+              Select an industry example below to hear how our AI provides sophisticated, context-aware communication that enhances your brand's reputation.
+            </p>
+            <a href="tel:+447700107355" class="mt-6 inline-flex items-center gap-2 text-[15px] font-medium text-[#ffd9e8] hover:text-[#f4f2ef]">
+              <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+              Or call it live now: 07700 107355
+            </a>
+          </div>
+        </div>
+
+        <div id="collectionGrid" class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-5 lg:gap-8">
+          <div class="agent-reveal">
+            <article class="example-card fade-card group aspect-[4/5] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4dd5a8b0-2d0d-44eb-ae24-75a4345db5ac_3840w.png"
+                   alt="" width="1632" height="2048" loading="lazy" decoding="async"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/35 to-[#0a0a0c]/10" aria-hidden="true"></div>
+              <div class="card-glare" aria-hidden="true"></div>
+              <div class="absolute inset-x-0 top-0 flex justify-between p-6 text-[12px] font-medium uppercase tracking-[0.28em] text-[#f4f2ef]/75">
+                <span>Example 01</span><span>Retail</span>
+              </div>
+              <button type="button" class="play-btn absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2" data-video="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6aa3d9d89f8b31b6abae8eb8.mp4" aria-label="Play the bakery example call">
+                <span class="play-ring"><iconify-icon icon="solar:play-bold" width="26" aria-hidden="true"></iconify-icon></span>
+              </button>
+              <div class="absolute inset-x-0 bottom-0 p-6 md:p-7 lg:p-8">
+                <p class="text-[13px] font-medium uppercase tracking-[0.24em] text-[#f5b8d0]">Bakery example</p>
+                <h3 class="mt-2 text-[clamp(1.75rem,2.5vw,2.5rem)] font-medium leading-none tracking-tighter">Retail Operations</h3>
+                <p class="mt-3 max-w-[32ch] text-[15px] leading-relaxed text-[#f4f2ef]/72">Handling high-volume inquiries for local retail environments.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="agent-reveal">
+            <article class="example-card fade-card group aspect-[4/5] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d898f02c-0397-49fe-9aca-cab19a5582c5_3840w.png"
+                   alt="" width="1632" height="2048" loading="lazy" decoding="async"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/35 to-[#0a0a0c]/10" aria-hidden="true"></div>
+              <div class="card-glare" aria-hidden="true"></div>
+              <div class="absolute inset-x-0 top-0 flex justify-between p-6 text-[12px] font-medium uppercase tracking-[0.28em] text-[#f4f2ef]/75">
+                <span>Example 02</span><span>Trades</span>
+              </div>
+              <button type="button" class="play-btn absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2" data-video="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6aa3d9d8a65c58fb9c3ad09f.mp4" aria-label="Play the HVAC example call">
+                <span class="play-ring"><iconify-icon icon="solar:play-bold" width="26" aria-hidden="true"></iconify-icon></span>
+              </button>
+              <div class="absolute inset-x-0 bottom-0 p-6 md:p-7 lg:p-8">
+                <p class="text-[13px] font-medium uppercase tracking-[0.24em] text-[#f5b8d0]">HVAC example</p>
+                <h3 class="mt-2 text-[clamp(1.75rem,2.5vw,2.5rem)] font-medium leading-none tracking-tighter">Home Service Coordination</h3>
+                <p class="mt-3 max-w-[32ch] text-[15px] leading-relaxed text-[#f4f2ef]/72">Reliable intake and scheduling for specialised contractors.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="agent-reveal">
+            <article class="example-card fade-card group aspect-[4/5] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/25d0ce5e-7521-4346-900f-d2ff2902bd46_3840w.png"
+                   alt="" width="1632" height="2048" loading="lazy" decoding="async"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/35 to-[#0a0a0c]/10" aria-hidden="true"></div>
+              <div class="card-glare" aria-hidden="true"></div>
+              <div class="absolute inset-x-0 top-0 flex justify-between p-6 text-[12px] font-medium uppercase tracking-[0.28em] text-[#f4f2ef]/75">
+                <span>Example 03</span><span>Practice</span>
+              </div>
+              <button type="button" class="play-btn absolute left-1/2 top-[36%] -translate-x-1/2 -translate-y-1/2" data-video="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6aa3d9d8770fd0c1659ff0c5.mp4" aria-label="Play the optical shop example call">
+                <span class="play-ring"><iconify-icon icon="solar:play-bold" width="26" aria-hidden="true"></iconify-icon></span>
+              </button>
+              <div class="absolute inset-x-0 bottom-0 p-6 md:p-7 lg:p-8">
+                <p class="text-[13px] font-medium uppercase tracking-[0.24em] text-[#f5b8d0]">Optical shop example</p>
+                <h3 class="mt-2 text-[clamp(1.75rem,2.5vw,2.5rem)] font-medium leading-none tracking-tighter">Professional Practice</h3>
+                <p class="mt-3 max-w-[32ch] text-[15px] leading-relaxed text-[#f4f2ef]/72">Streamlining administrative tasks for specialised client-facing businesses.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3 · MISSED REVENUE CALCULATOR ===================== -->
+    <section id="calculator" class="relative px-5 pb-28 md:px-10 md:pb-40">
+      <div class="mx-auto max-w-[1440px]">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5" data-reveal>
+            <p class="mb-6 flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.32em] text-[#f5b8d0]">
+              <span class="h-px w-8 bg-[#f5b8d0]" aria-hidden="true"></span>Calculate your missed revenue
+            </p>
+            <h2 class="text-[clamp(2.5rem,5.4vw,5.25rem)] font-medium leading-[0.94] tracking-tighter">
+              <span class="reveal-line"><span>Every missed call</span></span>
+              <span class="reveal-line"><span class="text-[#f4f2ef]/40">is a missed customer.</span></span>
+            </h2>
+            <p class="mt-8 max-w-[40ch] text-[16px] leading-relaxed text-[#f4f2ef]/65 md:text-[17px]">See how much money is slipping through the cracks — and going straight to your competition.</p>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="calc-card overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.035] p-6 backdrop-blur-sm sm:p-8 md:p-10">
+              <div class="grid gap-9">
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <label for="inCalls" class="text-[15px] font-medium">Missed calls per week</label>
+                    <output id="outCalls" for="inCalls" class="text-[22px] font-medium tabular-nums tracking-tight">20</output>
+                  </div>
+                  <input id="inCalls" class="range mt-3" type="range" min="0" max="300" step="1" value="20">
+                  <div class="flex justify-between text-[12px] tabular-nums text-[#f4f2ef]/45"><span>0</span><span>300</span></div>
+                  <p class="mt-2 text-[13px] text-[#f4f2ef]/55">Businesses miss 28%–62%+ of inbound calls (industry average).</p>
+                </div>
+
+                <div>
+                  <label for="inSale" class="text-[15px] font-medium">Average sale value</label>
+                  <div class="mt-3 flex items-center rounded-2xl border border-white/12 bg-[#050505]/50 px-4 focus-within:border-[#f5b8d0]">
+                    <span class="text-[20px] text-[#f4f2ef]/60" aria-hidden="true">£</span>
+                    <input id="inSale" class="num-input h-14 w-full bg-transparent px-2 text-[20px] font-medium tabular-nums outline-none" type="number" inputmode="decimal" min="0" max="10000" step="1" value="300">
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <label for="inClose" class="text-[15px] font-medium">Close rate</label>
+                    <output id="outClose" for="inClose" class="text-[22px] font-medium tabular-nums tracking-tight">30%</output>
+                  </div>
+                  <input id="inClose" class="range mt-3" type="range" min="1" max="100" step="1" value="30">
+                  <div class="flex justify-between text-[12px] tabular-nums text-[#f4f2ef]/45"><span>1%</span><span>100%</span></div>
+                </div>
+              </div>
+
+              <div class="mt-10 rounded-[22px] bg-[#F43F5E] p-6 text-[#050505] sm:p-8">
+                <p class="text-[12px] font-semibold uppercase tracking-[0.28em]">Revenue going to your competition</p>
+                <p class="mt-3 text-[clamp(2.75rem,6vw,4.75rem)] font-medium leading-none tracking-tighter tabular-nums" id="outYear" aria-live="polite">£93,600</p>
+                <p class="mt-2 text-[15px] font-medium">per year in missed calls</p>
+                <div class="mt-6 grid grid-cols-2 gap-4 border-t border-[#050505]/20 pt-5">
+                  <div><p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#050505]/75">Weekly missed</p><p class="mt-1 text-[22px] font-semibold tabular-nums" id="outWeek">£1,800</p></div>
+                  <div><p class="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#050505]/75">Monthly missed</p><p class="mt-1 text-[22px] font-semibold tabular-nums" id="outMonth">£7,794</p></div>
+                </div>
+              </div>
+
+              <div class="mt-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                <p class="max-w-[30ch] text-[15px] leading-relaxed text-[#f4f2ef]/70">See how an AI employee can capture your missed leads.</p>
+                <a href="tel:+447700107355" class="btn-light">
+                  Get your personalised demo
+                  <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4 · WHY IMANLOGIC ===================== -->
+    <section id="noema-manifesto" class="on-light relative overflow-hidden px-5 pb-32 pt-24 md:px-10 md:pb-48 md:pt-32">
+      <div class="mx-auto max-w-[1440px]">
+        <!-- Explainer video: answers the calculator's "revenue going to your competition" -->
+        <div id="explainer" class="mx-auto mb-28 max-w-[1080px] md:mb-40">
+          <div class="mb-5 flex items-center justify-between gap-4 text-[12px] font-semibold uppercase tracking-[0.28em] text-[#050505]/65">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#F43F5E]" aria-hidden="true"></span>Watch · 55 sec</span>
+            <span class="hidden sm:inline">What if they answered the phone 24/7?</span>
+          </div>
+          <div id="explainerFrame" class="relative aspect-video overflow-hidden rounded-[28px] bg-[#e8e5e0] shadow-[0_60px_120px_-50px_rgba(5,5,5,0.45)] ring-1 ring-[#050505]/10">
+            <video id="explainerVideo" class="absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata"
+                   src="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6a84ba64b39b2fad7ffd6631.mp4#t=0.1"
+                   aria-label="ImanLogic AI employee explainer video"></video>
+            <button id="explainerPlay" type="button" class="group absolute inset-0 flex items-end justify-start p-4 sm:items-center sm:justify-center sm:p-0" aria-label="Watch the 55-second explainer with sound">
+              <span class="inline-flex items-center gap-3 rounded-full bg-[#050505] py-2 pl-2 pr-5 text-[15px] font-medium text-[#f4f2ef] shadow-[0_20px_40px_-10px_rgba(5,5,5,0.5)] transition-transform duration-300 group-hover:scale-105 sm:py-2.5 sm:pl-2.5 sm:pr-6">
+                <span class="grid h-10 w-10 place-items-center rounded-full bg-[#F43F5E] text-[#050505] sm:h-11 sm:w-11"><iconify-icon icon="solar:play-bold" width="20" aria-hidden="true"></iconify-icon></span>
+                Watch with sound
+              </span>
+            </button>
+          </div>
+          <div class="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <p class="text-[16px] text-[#050505]/70">Seen enough? Hear it answer a real call.</p>
+            <a href="tel:+447700107355" class="btn-dark">
+              <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+              Demo the AI Employee: 07700 107355
+            </a>
+          </div>
+        </div>
+
+        <p class="mb-12 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.32em] text-[#050505]/70 md:mb-16">
+          <span class="h-px w-8 bg-[#050505]" aria-hidden="true"></span>Why use ImanLogic?
+        </p>
+        <h2 id="manifestoText"
+           class="max-w-[20ch] text-[clamp(2.25rem,5.6vw,5.5rem)] font-medium leading-[1.02] tracking-tighter text-[#050505]"
+           data-words="Work smarter with ImanLogic. Keep your *schedule full* while you focus on the job."></h2>
+
+        <div id="whyGrid" class="mt-16 grid gap-10 border-t border-[#050505]/15 pt-10 md:mt-24 md:grid-cols-3 md:gap-8">
+          <div class="why-item">
+            <p class="text-[clamp(3.5rem,6vw,5.5rem)] font-medium leading-none tracking-tighter tabular-nums text-[#050505]"><span class="count" data-to="67">67</span>%</p>
+            <h3 class="mt-5 text-[22px] font-semibold tracking-tight text-[#050505]">Never Miss a Lead</h3>
+            <p class="mt-3 max-w-[38ch] text-[16px] leading-relaxed text-[#050505]/70">Don't let your hard work go to waste by missing a call. We help you capture the 67% of callers who would otherwise hang up and go elsewhere.</p>
+          </div>
+          <div class="why-item">
+            <p class="text-[clamp(3.5rem,6vw,5.5rem)] font-medium leading-none tracking-tighter tabular-nums text-[#050505]"><span class="count" data-to="92">92</span>%</p>
+            <h3 class="mt-5 text-[22px] font-semibold tracking-tight text-[#050505]">Talk to More Customers</h3>
+            <p class="mt-3 max-w-[38ch] text-[16px] leading-relaxed text-[#050505]/70">Since 92% of business happens on the phone, answering every call is the easiest way to grow. Our AI handles the talking so you don't have to worry about the phone while you're working.</p>
+          </div>
+          <div class="why-item">
+            <p class="text-[clamp(3.5rem,6vw,5.5rem)] font-medium leading-none tracking-tighter tabular-nums text-[#050505]"><span class="count" data-to="93">93</span>%</p>
+            <h3 class="mt-5 text-[22px] font-semibold tracking-tight text-[#050505]">Build Lasting Trust</h3>
+            <p class="mt-3 max-w-[38ch] text-[16px] leading-relaxed text-[#050505]/70">We help you manage the reviews that 93% of your customers are reading. By responding quickly, you show the community that you are a professional they can count on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5 · CTA BAND ===================== -->
+    <section id="craft" class="relative">
+      <div id="parallaxStrip" class="relative h-[82vh] min-h-[520px] overflow-hidden">
+        <img id="stripImg"
+             src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/cf973fee-26dd-4029-b42e-26dfa75c7417_3840w.png"
+             alt="" width="2048" height="1088" loading="lazy" decoding="async"
+             class="absolute left-0 top-[-14%] h-[128%] w-full object-cover will-change-transform">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/85 via-[#0a0a0c]/45 to-[#0a0a0c]" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-5 text-center md:px-10" data-reveal>
+          <p class="mb-6 text-[12px] font-medium uppercase tracking-[0.36em] text-[#ffd9e8]">AI Employee System — installed in 7 days</p>
+          <h2 class="max-w-[16ch] text-[clamp(2.5rem,6.4vw,6.25rem)] font-medium leading-[0.92] tracking-tighter">
+            <span class="reveal-line"><span>Let ImanLogic Digital</span></span>
+            <span class="reveal-line"><span>work for your business</span></span>
+            <span class="reveal-line"><span class="text-[#f5b8d0]">24/7.</span></span>
+          </h2>
+          <p class="mt-8 text-[17px] text-[#f4f2ef]/80">Plans from <span class="font-semibold text-[#f4f2ef]">£399/month</span></p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="get-started.html" class="btn-light">
+              Get My AI Employee
+              <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+            </a>
+            <a href="tel:+447700107355" class="btn-ghost">
+              <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+              Demo the AI Employee
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6 · AI TEXTING CHANNELS ===================== -->
+    <section id="integration" class="relative px-5 py-28 md:px-10 md:py-40">
+      <div class="mx-auto max-w-[1440px]">
+        <div class="mb-12 grid gap-10 md:mb-16 md:grid-cols-2 md:items-end">
+          <div data-reveal>
+            <p class="mb-6 flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.32em] text-[#f5b8d0]">
+              <span class="h-px w-8 bg-[#f5b8d0]" aria-hidden="true"></span>AI chat employee
+            </p>
+            <h2 class="text-[clamp(2.5rem,6vw,5.75rem)] font-medium leading-[0.94] tracking-tighter">
+              <span class="reveal-line"><span>Automated texting</span></span>
+              <span class="reveal-line"><span class="text-[#f4f2ef]/40">that works for you.</span></span>
+            </h2>
+          </div>
+          <p class="max-w-[46ch] text-[16px] leading-relaxed text-[#f4f2ef]/65 md:justify-self-end md:text-[17px]">
+            Many customers prefer to text rather than call. If you're busy on a job or helping someone at the desk, those messages can sit for hours. Our AI answers every text instantly, 24/7, providing answers and booking appointments so you don't have to.
+          </p>
+        </div>
+
+        <div role="tablist" aria-label="Messaging channels" class="-mx-5 mb-8 flex gap-2 overflow-x-auto px-5 pb-2 md:mx-0 md:px-0" id="channelTabs">
+          <button type="button" role="tab" class="tab-btn" id="tab-sms" aria-controls="panel-sms" aria-selected="true">
+            <iconify-icon icon="solar:chat-round-dots-linear" width="18" aria-hidden="true"></iconify-icon>SMS
+          </button>
+          <button type="button" role="tab" class="tab-btn" id="tab-missed" aria-controls="panel-missed" aria-selected="false" tabindex="-1">
+            <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>Missed Call Text Back
+          </button>
+          <button type="button" role="tab" class="tab-btn" id="tab-webchat" aria-controls="panel-webchat" aria-selected="false" tabindex="-1">
+            <iconify-icon icon="solar:server-square-linear" width="18" aria-hidden="true"></iconify-icon>Webchat
+          </button>
+          <button type="button" role="tab" class="tab-btn" id="tab-meta" aria-controls="panel-meta" aria-selected="false" tabindex="-1">
+            <iconify-icon icon="solar:hashtag-linear" width="18" aria-hidden="true"></iconify-icon>Meta Ad
+          </button>
+        </div>
+
+        <div class="channel-card fade-card overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.035] backdrop-blur-sm">
+          <div class="card-glare" aria-hidden="true"></div>
+
+          <div role="tabpanel" id="panel-sms" aria-labelledby="tab-sms" class="grid lg:grid-cols-2" tabindex="0">
+            <div class="flex flex-col justify-center p-8 md:p-12">
+              <h3 class="text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-tight tracking-tighter">AI SMS: Professional Conversations on Autopilot</h3>
+              <p class="mt-5 text-[16px] leading-relaxed text-[#f4f2ef]/70">Stop losing business to slow text replies. Our AI handles your incoming messages instantly, delivering the right answers and moving customers toward an appointment. It's a smart, reliable way to make sure every curious texter becomes a paying customer without you having to lift a finger.</p>
+            </div>
+            <div class="relative min-h-[320px] bg-[#050505]/60 lg:min-h-[480px]">
+              <video class="channel-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" src="https://imanlogic.com/wp-content/uploads/Untitled-design-2.mp4" aria-label="AI SMS conversation preview"></video>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-missed" aria-labelledby="tab-missed" class="grid lg:grid-cols-2" tabindex="0" hidden>
+            <div class="flex flex-col justify-center p-8 md:p-12">
+              <h3 class="text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-tight tracking-tighter">Missed Call Text Back: Win Back Every Missed Call</h3>
+              <p class="mt-5 text-[16px] leading-relaxed text-[#f4f2ef]/70">Can't get to the phone? The moment a call goes unanswered, your AI employee texts the caller back — answering their question and booking them in before they ring a competitor.</p>
+            </div>
+            <div class="relative min-h-[320px] bg-[#050505]/60 lg:min-h-[480px]">
+              <video class="channel-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" src="https://imanlogic.com/wp-content/uploads/AI-Employees-and-Reviews-for-Local-Businesses-in-the-UK-law-firm.mp4" aria-label="Missed call text back preview"></video>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-webchat" aria-labelledby="tab-webchat" class="grid lg:grid-cols-2" tabindex="0" hidden>
+            <div class="flex flex-col justify-center p-8 md:p-12">
+              <h3 class="text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-tight tracking-tighter">Webchat: Turn Website Visitors Into New Clients</h3>
+              <p class="mt-5 text-[16px] leading-relaxed text-[#f4f2ef]/70">When a potential client visits your site, they usually have a question. If they don't get an answer fast, they move on to a competitor. Our AI stays on your homepage around the clock to answer those questions and guide people toward a booking. It's like having your best employee working 24/7 to turn curious visitors into loyal customers.</p>
+              <ul class="mt-6 space-y-3 text-[15px] text-[#f4f2ef]/80">
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Immediate Answers:</strong> Handles common questions about your services or pricing instantly.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Professional Tone:</strong> Maintains a polished, helpful image for your brand at all times.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Efficiency:</strong> Frees up your front desk by handling basic inquiries automatically.</span></li>
+              </ul>
+            </div>
+            <div class="relative min-h-[320px] bg-[#050505]/60 lg:min-h-[480px]">
+              <video class="channel-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" src="https://imanlogic.com/wp-content/uploads/AI-Employees-and-Reviews-for-Local-Businesses-in-the-UK-conversation-ai-law-firm.mp4" aria-label="Webchat conversation preview"></video>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-meta" aria-labelledby="tab-meta" class="grid lg:grid-cols-2" tabindex="0" hidden>
+            <div class="flex flex-col justify-center p-8 md:p-12">
+              <h3 class="text-[clamp(1.75rem,3vw,2.75rem)] font-medium leading-tight tracking-tighter">Meta Ad AI: Make Every Lead Count</h3>
+              <p class="mt-5 text-[16px] leading-relaxed text-[#f4f2ef]/70">Facebook and Instagram ads cost money—don't let those leads go to waste because of a slow response. When someone clicks your ad or leaves a comment, our AI responds the very second they engage. It turns a simple "click" into a real conversation, answering questions and moving the customer toward a booking before they move on to a competitor.</p>
+              <ul class="mt-6 space-y-3 text-[15px] text-[#f4f2ef]/80">
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Instant Interaction:</strong> Starts a professional conversation immediately when a prospect reaches out.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Automatic Follow-Up:</strong> Handles Messenger and comment replies 24/7 so you don't have to monitor your phone.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#f5b8d0]" aria-hidden="true"></span><span><strong class="font-semibold text-[#f4f2ef]">Higher Success Rate:</strong> Turns expensive ad clicks into scheduled jobs for your business.</span></li>
+              </ul>
+            </div>
+            <div class="relative min-h-[320px] bg-[#050505]/60 lg:min-h-[480px]">
+              <video class="channel-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" src="https://imanlogic.com/wp-content/uploads/AI-Employees-and-Reviews-for-Local-Businesses-in-the-UK-socials.mp4" aria-label="Meta ad conversation preview"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7 · FEATURES BOARD ===================== -->
+    <section id="noema-board" class="on-light relative overflow-hidden px-5 pb-28 pt-24 md:px-10 md:pb-40 md:pt-32">
+      <div class="giant top-6 md:top-10" aria-hidden="true">24/7</div>
+
+      <div class="relative z-10 mx-auto max-w-[1440px]">
+        <div class="mb-14 mt-[14vw] flex flex-col justify-between gap-8 md:mb-20 md:flex-row md:items-end">
+          <div data-reveal>
+            <p class="mb-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.32em] text-[#050505]/70">
+              <span class="h-px w-8 bg-[#050505]" aria-hidden="true"></span>Features
+            </p>
+            <h2 class="text-[clamp(2.5rem,6vw,5.75rem)] font-medium leading-[0.94] tracking-tighter text-[#050505]">
+              <span class="reveal-line"><span>All the features you need</span></span>
+              <span class="reveal-line"><span class="text-[#050505]/45">in one place.</span></span>
+            </h2>
+          </div>
+          <p class="max-w-[40ch] text-[16px] leading-relaxed text-[#050505]/70 md:text-[17px]">Access everything you need to optimise and simplify your workflow, all in one convenient platform.</p>
+        </div>
+
+        <div id="boardGrid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:phone-calling-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Conversation Phone Calls</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">Live voice conversation with all your inbound calls.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:clock-circle-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Custom Working Hours</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">Choose the hours for your AI employee to respond.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:routing-2-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Route Inbound Calls</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">Your AI employee can transfer calls to any phone at any time.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] bg-[#F43F5E] p-7 text-[#050505] shadow-[0_40px_80px_-40px_rgba(244,63,94,0.7)]">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:user-id-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Capture Information</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/80">Collect lead's contact info, email, interests, issues, etc.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:letter-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Email Summary</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">Transcript of every call can be emailed to the business.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:server-square-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Workflow Activation</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">AI custom actions like sending booking links or menu of services.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 text-[#050505] backdrop-blur-sm">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:microphone-3-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Tone Customisation</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#050505]/70">Choice of gender and multiple different voices.</p>
+          </article>
+          <article class="board-card fade-card flex min-h-[260px] flex-col overflow-hidden rounded-[26px] bg-[#050505] p-7 text-[#f4f2ef]">
+            <div class="card-glare" aria-hidden="true"></div>
+            <iconify-icon icon="solar:star-linear" width="30" aria-hidden="true"></iconify-icon>
+            <h3 class="mt-auto pt-10 text-[22px] font-semibold leading-tight tracking-tight">Simple &amp; Effective Promoting</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#f4f2ef]/70">Your AI employee is custom created to promote your business.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8 · DEMO ON YOUR SITE ===================== -->
+    <section id="noema-support" class="on-light relative overflow-hidden border-t border-[#050505]/10 px-5 pb-28 pt-24 md:px-10 md:pb-44 md:pt-32">
+      <div class="giant bottom-[-2vw]" aria-hidden="true">LIVE</div>
+
+      <div class="relative z-10 mx-auto max-w-[1440px]">
+        <div class="grid gap-14 lg:grid-cols-12">
+          <div class="lg:col-span-5" data-reveal>
+            <p class="mb-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.32em] text-[#050505]/70">
+              <span class="h-px w-8 bg-[#050505]" aria-hidden="true"></span>Free demo · simulated on your website
+            </p>
+            <h2 class="text-[clamp(2.5rem,5.4vw,5.25rem)] font-medium leading-[0.94] tracking-tighter text-[#050505]">
+              <span class="reveal-line"><span>See your new AI employee</span></span>
+              <span class="reveal-line"><span class="text-[#050505]/45">in action.</span></span>
+            </h2>
+            <p class="mt-8 max-w-[42ch] text-[16px] leading-relaxed text-[#050505]/70 md:text-[17px]">Stop wondering how AI fits into your business. We will show you exactly how a digital assistant looks and speaks on your specific website—whether you run a law firm, a med spa, or a detailing shop.</p>
+            <div class="mt-10 flex flex-wrap gap-3">
+              <a href="https://imanlogic.com/ai/" class="btn-dark">
+                Simulate the AI on your site
+                <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+              </a>
+              <a href="tel:+447700107355" class="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-[#050505]/20 px-5 text-[15px] font-medium text-[#050505] transition-colors hover:border-[#050505]">
+                <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+                Demo the AI Employee
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
+            <div class="stat-card fade-card overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 backdrop-blur-sm">
+              <div class="card-glare" aria-hidden="true"></div>
+              <p class="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#050505]/60">01</p>
+              <h3 class="mt-10 text-[clamp(1.6rem,2.4vw,2.2rem)] font-medium leading-tight tracking-tighter text-[#050505]">Custom for your brand</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#050505]/70">A live preview tailored to your services.</p>
+            </div>
+            <div class="stat-card fade-card overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 backdrop-blur-sm">
+              <div class="card-glare" aria-hidden="true"></div>
+              <p class="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#050505]/60">02</p>
+              <h3 class="mt-10 text-[clamp(1.6rem,2.4vw,2.2rem)] font-medium leading-tight tracking-tighter text-[#050505]">Zero risk</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#050505]/70">See the results before you ever change a single thing on your site.</p>
+            </div>
+            <div class="stat-card fade-card overflow-hidden rounded-[26px] border border-[#050505]/10 bg-white/60 p-7 backdrop-blur-sm">
+              <div class="card-glare" aria-hidden="true"></div>
+              <p class="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#050505]/60">03</p>
+              <h3 class="mt-10 text-[clamp(1.6rem,2.4vw,2.2rem)] font-medium leading-tight tracking-tighter text-[#050505]">Instant clarity</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#050505]/70">Understand how the AI captures leads while you focus on your work.</p>
+            </div>
+            <div class="stat-card fade-card overflow-hidden rounded-[26px] bg-[#050505] p-7 text-[#f4f2ef]">
+              <div class="card-glare" aria-hidden="true"></div>
+              <p class="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#f5b8d0]">Your client experience</p>
+              <h3 class="mt-10 text-[clamp(1.6rem,2.4vw,2.2rem)] font-medium leading-tight tracking-tighter">Polished, 24/7</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#f4f2ef]/70">Request a complimentary demonstration to see how our AI manages inquiries and captures leads on your homepage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9 · HAVE A QUESTION ===================== -->
+    <section id="question" class="relative px-5 py-28 md:px-10 md:py-40">
+      <div class="mx-auto grid max-w-[1440px] items-start gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="min-w-0 lg:col-span-5" data-reveal>
+          <p class="mb-6 flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.32em] text-[#f5b8d0]">
+            <span class="h-px w-8 bg-[#f5b8d0]" aria-hidden="true"></span>Experience the future of customer engagement
+          </p>
+          <h2 class="text-[clamp(2.75rem,6vw,6rem)] font-medium leading-[0.92] tracking-tighter">
+            <span class="reveal-line"><span>Have a question?</span></span>
+            <span class="reveal-line"><span class="text-[#f4f2ef]/40">Ask our AI.</span></span>
+          </h2>
+          <p class="mt-8 max-w-[46ch] text-[16px] leading-relaxed text-[#f4f2ef]/70 md:text-[17px]">Have a specific question about how we can support your business? Talk to our AI employee or chat with it right here, and discover first-hand how it manages inquiries with professional precision.</p>
+
+          <!-- Widget 1: voice AI -->
+          <div class="mt-10 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.035] backdrop-blur-sm">
+            <div class="flex items-center gap-3 border-b border-white/10 px-6 py-4">
+              <iconify-icon icon="solar:microphone-3-linear" width="20" class="text-[#f5b8d0]" aria-hidden="true"></iconify-icon>
+              <p class="text-[15px] font-medium">Talk to our AI employee</p>
+            </div>
+            <div id="voiceWidget" class="widget-slot relative min-h-[440px]">
+              <div class="widget-loading absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center text-[15px] text-[#f4f2ef]/60" role="status">
+                <iconify-icon icon="solar:microphone-3-linear" width="32" class="text-[#f5b8d0]" aria-hidden="true"></iconify-icon>
+                Loading voice AI…
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="tel:+447700107355" class="btn-ghost">
+              <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+              Prefer to phone? 07700 107355
+            </a>
+          </div>
+        </div>
+
+        <!-- Widget 2: AI chat -->
+        <div class="min-w-0 lg:col-span-7">
+          <div class="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.035] backdrop-blur-sm">
+            <div class="flex items-center gap-3 border-b border-white/10 px-6 py-4">
+              <iconify-icon icon="solar:chat-round-dots-linear" width="20" class="text-[#f5b8d0]" aria-hidden="true"></iconify-icon>
+              <p class="text-[15px] font-medium">Chat with our AI employee</p>
+            </div>
+            <div id="inlineChat" class="widget-slot relative min-h-[592px]">
+              <div class="widget-loading absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center text-[15px] text-[#f4f2ef]/60" role="status">
+                <iconify-icon icon="solar:chat-round-dots-linear" width="32" class="text-[#f5b8d0]" aria-hidden="true"></iconify-icon>
+                Loading the AI chat employee…
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 10 · FINAL CTA ===================== -->
+    <section id="get-started" class="relative overflow-hidden px-5 pb-28 md:px-10 md:pb-40">
+      <div class="final-card relative mx-auto max-w-[1440px] overflow-hidden rounded-[36px] border border-white/10 px-6 py-20 text-center sm:px-10 md:py-28"
+           style="background: radial-gradient(60% 80% at 50% 0%, rgba(244,63,94,0.35), transparent 70%), radial-gradient(50% 60% at 15% 100%, rgba(245,184,208,0.18), transparent 70%), rgba(10,10,12,0.6);">
+        <p class="text-[12px] font-medium uppercase tracking-[0.36em] text-[#ffd9e8]">Deploy a 24/7 digital workforce that pays for itself</p>
+        <h2 class="mx-auto mt-6 max-w-[14ch] text-[clamp(2.75rem,7vw,6.75rem)] font-medium leading-[0.92] tracking-tighter" data-reveal>
+          <span class="reveal-line"><span>Your AI employee is ready.</span></span>
+          <span class="reveal-line"><span class="text-[#f5b8d0]">Is your business?</span></span>
+        </h2>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a href="get-started.html" class="btn-light">
+            Get Started — £399/month
+            <iconify-icon icon="solar:arrow-right-linear" width="18" aria-hidden="true"></iconify-icon>
+          </a>
+          <a href="tel:+447700107355" class="btn-ghost">
+            <iconify-icon icon="solar:phone-calling-linear" width="18" aria-hidden="true"></iconify-icon>
+            Demo the AI Employee
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="relative overflow-hidden px-5 pb-10 pt-8 md:px-10">
+    <div class="mx-auto max-w-[1440px]">
+      <div class="grid gap-12 border-t border-white/10 pt-16 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <img src="https://assets.cdn.filesafe.space/MXTd0SZLgqozCxeKfw9D/media/6a42c7be0c7afddf14836aea.png" alt="ImanLogic Digital" width="400" height="160" loading="lazy" class="-ml-3 h-20 w-auto">
+          <p class="mt-6 max-w-[44ch] text-[16px] leading-relaxed text-[#f4f2ef]/65">Turn your business into a 24/7 profit-generating engine with AI employees that qualify leads, schedule appointments, and manage client inquiries with total reliability.</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="mb-4 text-[12px] font-medium uppercase tracking-[0.28em] text-[#f4f2ef]/45">Explore</p>
+          <ul class="space-y-1 text-[15px]">
+            <li><a class="py-1.5 text-[#f4f2ef]/80 transition-colors hover:text-[#ffd9e8]" href="#cinematic">Home</a></li>
+            <li><a class="py-1.5 text-[#f4f2ef]/80 transition-colors hover:text-[#ffd9e8]" href="#noema-board">Features</a></li>
+            <li><a class="py-1.5 text-[#f4f2ef]/80 transition-colors hover:text-[#ffd9e8]" href="https://imanlogic.com/pricing-for-ai-employees-and-reviews-for-local-businesses">Pricing</a></li>
+            <li><a class="py-1.5 text-[#f4f2ef]/80 transition-colors hover:text-[#ffd9e8]" href="https://imanlogic.com/ai/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-4">
+          <div class="rounded-[22px] border border-white/10 bg-white/[0.035] p-6">
+            <p class="text-[18px] font-medium tracking-tight">Let us send you money with our Referral Program!</p>
+            <p class="mt-2 text-[15px] leading-relaxed text-[#f4f2ef]/65">Get a unique QR code to share with others. When they sign up using your code, we'll send you £££.</p>
+            <a href="https://imanlogic.com/" class="mt-4 items-center gap-2 text-[15px] font-medium text-[#ffd9e8] hover:text-[#f4f2ef]">
+              Learn more
+              <iconify-icon icon="solar:arrow-right-linear" width="16" aria-hidden="true"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-20 select-none text-center text-[clamp(3.5rem,15vw,16rem)] font-semibold leading-[0.8] tracking-tighter text-[#f4f2ef]/[0.06]" aria-hidden="true">IMANLOGIC</p>
+
+      <div class="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-[13px] text-[#f4f2ef]/55 md:flex-row md:items-center">
+        <p>© 2026 ImanLogic. All rights reserved.</p>
+        <ul class="flex flex-wrap gap-x-5 gap-y-1">
+          <li><a class="py-1 hover:text-[#f4f2ef]" href="https://imanlogic.com/privacy-policy/">Privacy Policy</a></li>
+          <li><a class="py-1 hover:text-[#f4f2ef]" href="https://imanlogic.com/terms-of-service">Terms of Service</a></li>
+          <li><a class="py-1 hover:text-[#f4f2ef]" href="https://imanlogic.com/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== LEADCONNECTOR WIDGETS ===================== -->
+  <script>
+    // Both widgets are inline (embedded) widgets, but the LeadConnector loader appends every widget
+    // to the end of <body>. Move each one into its slot in the "Have a question?" section as it is created.
+    (function () {
+      const SLOTS = {
+        '694bed88cbeed92798deeede': 'voiceWidget', // Widget 1: voice AI
+        '6aa3d89cf095905710c037a1': 'inlineChat'   // Widget 2: AI chat
+      };
+      let remaining = Object.keys(SLOTS).length;
+      const place = (el) => {
+        const instance = el.getAttribute('data-loader-instance-id');
+        const script = instance && document.querySelector(`script[data-loader-instance="${instance}"]`);
+        const slot = script && document.getElementById(SLOTS[script.getAttribute('data-widget-id')]);
+        if (!slot) return;
+        slot.appendChild(el);
+        slot.querySelector('.widget-loading').hidden = true;
+        remaining -= 1;
+      };
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const node of m.addedNodes) if (node.nodeName === 'CHAT-WIDGET') place(node);
+        }
+        if (remaining <= 0) observer.disconnect();
+      });
+      observer.observe(document.body, { childList: true });
+    })();
+  </script>
+  <!-- Widget 1 -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="694bed88cbeed92798deeede"></script>
+  <!-- Widget 2 -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6aa3d89cf095905710c037a1"></script>
+
+  <!-- ===================== THREE.JS PARTICLES ===================== -->
+  <script type="module">
+    import * as THREE from 'three';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+    import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+    const canvas = document.getElementById('particlesBg');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // UnrealBloomPass settings
+    const BLOOM = { strength: 1.15, radius: 0.62, threshold: 0.0 };
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
+    } catch (err) {
+      canvas.remove();
+      throw err;
+    }
+
+    const DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+    renderer.setPixelRatio(DPR);
+    renderer.setSize(window.innerWidth, window.innerHeight, false);
+    renderer.setClearColor(0x0a0a0c, 1);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 200);
+    camera.position.set(0, 0, 18);
+
+    const COUNT = window.innerWidth < 768 ? 1600 : 3600;
+    const positions = new Float32Array(COUNT * 3);
+    const scales = new Float32Array(COUNT);
+    const seeds = new Float32Array(COUNT);
+    for (let i = 0; i < COUNT; i++) {
+      positions[i * 3]     = (Math.random() - 0.5) * 56;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 34;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 30 - 4;
+      scales[i] = Math.random() < 0.06 ? 2.2 + Math.random() * 2.6 : 0.45 + Math.random() * 1.1;
+      seeds[i] = Math.random();
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('aScale', new THREE.BufferAttribute(scales, 1));
+    geometry.setAttribute('aSeed', new THREE.BufferAttribute(seeds, 1));
+
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        uTime:       { value: 0 },
+        uScroll:     { value: 0 },
+        uPixelRatio: { value: DPR },
+        uSize:       { value: 44 },
+        uColor:      { value: new THREE.Color('#f5b8d0') },
+        uCore:       { value: new THREE.Color('#ffd9e8') }
+      },
+      vertexShader: /* glsl */`
+        uniform float uTime;
+        uniform float uScroll;
+        uniform float uPixelRatio;
+        uniform float uSize;
+        attribute float aScale;
+        attribute float aSeed;
+        varying float vAlpha;
+
+        void main() {
+          vec3 p = position;
+          float t = uTime * 0.12 + aSeed * 6.2831853;
+          p.x += sin(t + position.y * 0.18) * 0.9;
+          p.y += cos(t * 0.8 + position.x * 0.12) * 0.7;
+          p.z += sin(t * 0.6 + aSeed * 12.0) * 0.8;
+          p.y = mod(p.y + uScroll * 14.0 * (0.4 + aSeed * 0.6) + 17.0, 34.0) - 17.0;
+
+          vec4 mv = modelViewMatrix * vec4(p, 1.0);
+          gl_Position = projectionMatrix * mv;
+          gl_PointSize = uSize * aScale * uPixelRatio / -mv.z;
+
+          float twinkle = 0.55 + 0.45 * sin(uTime * (0.8 + aSeed * 1.6) + aSeed * 40.0);
+          float depth = smoothstep(-40.0, -9.0, mv.z);
+          float edge = 1.0 - smoothstep(14.0, 17.0, abs(p.y));
+          vAlpha = twinkle * mix(0.22, 1.0, depth) * edge;
+        }
+      `,
+      fragmentShader: /* glsl */`
+        uniform vec3 uColor;
+        uniform vec3 uCore;
+        varying float vAlpha;
+
+        void main() {
+          vec2 uv = gl_PointCoord - 0.5;
+          float d = length(uv);
+          if (d > 0.5) discard;
+          float halo = pow(1.0 - d * 2.0, 2.2);
+          float core = smoothstep(0.18, 0.0, d);
+          vec3 col = mix(uColor, uCore, core);
+          gl_FragColor = vec4(col, (halo * 0.6 + core * 0.9) * vAlpha);
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    const composer = new EffectComposer(renderer);
+    composer.setPixelRatio(DPR);
+    composer.setSize(window.innerWidth, window.innerHeight);
+    composer.addPass(new RenderPass(scene, camera));
+    const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), BLOOM.strength, BLOOM.radius, BLOOM.threshold);
+    composer.addPass(bloom);
+    composer.addPass(new OutputPass());
+
+    const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+    window.addEventListener('pointermove', (e) => {
+      mouse.tx = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.ty = (e.clientY / window.innerHeight) * 2 - 1;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      const w = window.innerWidth, h = window.innerHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+      composer.setSize(w, h);
+      bloom.resolution.set(w, h);
+    });
+
+    // Skip GPU work while an opaque light section fully covers the viewport
+    const lightSections = [...document.querySelectorAll('.on-light')];
+    const covered = () => lightSections.some((s) => {
+      const r = s.getBoundingClientRect();
+      return r.top <= 0 && r.bottom >= window.innerHeight;
+    });
+
+    const clock = new THREE.Clock();
+    let elapsed = 0;
+    function frame() {
+      requestAnimationFrame(frame);
+      const dt = Math.min(clock.getDelta(), 0.05);
+      if (document.hidden || covered()) return;
+      elapsed += dt * (reduce ? 0.25 : 1);
+
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      material.uniforms.uTime.value = elapsed;
+      material.uniforms.uScroll.value = window.scrollY / max;
+
+      mouse.x += (mouse.tx - mouse.x) * 0.04;
+      mouse.y += (mouse.ty - mouse.y) * 0.04;
+      points.rotation.y = mouse.x * 0.08;
+      points.rotation.x = mouse.y * 0.05;
+      points.rotation.z = elapsed * 0.004;
+
+      composer.render();
+    }
+    frame();
+  </script>
+
+  <!-- ===================== PAGE LOGIC ===================== -->
+  <script>
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+    const smooth = (e0, e1, x) => { const t = clamp((x - e0) / (e1 - e0)); return t * t * (3 - 2 * t); };
+    const TIMELINE_SECONDS = 12.75;
+
+    /* ---------------- Hero film: renderP loop ---------------- */
+    const cine = document.getElementById('cinematic');
+    const stage = document.getElementById('pinStage');
+    const bouquet = document.getElementById('bouquet');
+    const bgLayer = document.getElementById('bgLayer');
+    const bootShade = document.getElementById('bootShade');
+    const gradeWash = document.getElementById('gradeWash');
+    const lbTop = document.getElementById('lbTop');
+    const lbBot = document.getElementById('lbBot');
+    const timelineFill = document.getElementById('timelineFill');
+    const timelineBar = document.getElementById('timelineBar');
+    const timeLabel = document.getElementById('timeLabel');
+    const sceneNo = document.getElementById('sceneNo');
+    const scrollHint = document.getElementById('scrollHint');
+    const beats = [...document.querySelectorAll('.beat')].map((el) => ({
+      el, a: parseFloat(el.dataset.in), b: parseFloat(el.dataset.out)
+    }));
+    const beatActions = {};
+    document.querySelectorAll('.beat-actions').forEach((el) => { beatActions[el.dataset.for] = el; });
+    const dots = [...document.querySelectorAll('.hud-dot')];
+
+    let targetP = 0;
+    let renderP = 0;
+    let lastBeat = -1;
+    let lastLabel = '';
+
+    function measure() {
+      const r = cine.getBoundingClientRect();
+      const total = Math.max(1, cine.offsetHeight - window.innerHeight);
+      targetP = clamp(-r.top / total) || 0;
+      return r.bottom > 0 && r.top < window.innerHeight;
+    }
+
+    function applyP(p) {
+      bouquet.style.transform = `translate3d(0,0,0) scale(${(1 + 0.55 * p).toFixed(4)})`;
+      bgLayer.style.transform = `translate3d(0,${(p * -60).toFixed(2)}px,0)`;
+
+      const lb = Math.max(0.000314, 7 * smooth(0, 0.16, p));
+      const lbv = lb + 'vh';
+      lbTop.style.height = lbv;
+      lbBot.style.height = lbv;
+      stage.style.setProperty('--lb', lbv);
+
+      bootShade.style.opacity = (0.18 * (1 - smooth(0.02, 0.22, p)) + 0.35 * smooth(0.9, 1, p)).toFixed(3);
+      gradeWash.style.opacity = (0.25 + 0.55 * smooth(0.1, 0.85, p)).toFixed(3);
+      scrollHint.style.opacity = (1 - smooth(0.0, 0.035, p)).toFixed(3);
+
+      let active = 0;
+      const n = beats.length;
+      beats.forEach((bt, i) => {
+        const edge = (bt.b - bt.a) * 0.24;
+        const inA = i === 0 ? 1 : smooth(bt.a, bt.a + edge, p);
+        const outA = i === n - 1 ? 1 : 1 - smooth(bt.b - edge, bt.b, p);
+        const o = inA * outA;
+        if (p >= bt.a && p < bt.b) active = i;
+
+        const actions = beatActions[i];
+        if (actions) {
+          const visible = o > 0.01;
+          actions.style.visibility = visible ? 'visible' : 'hidden';
+          actions.style.opacity = o.toFixed(3);
+          actions.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
+          actions.style.transform = `translate3d(0,${((1 - inA) * 20 - (1 - outA) * 20).toFixed(2)}px,0)`;
+        }
+
+        if (o < 0.001) {
+          if (bt.el.style.visibility !== 'hidden') bt.el.style.visibility = 'hidden';
+          return;
+        }
+        bt.el.style.visibility = 'visible';
+        bt.el.style.opacity = o.toFixed(3);
+        const y = (1 - inA) * 32 - (1 - outA) * 32;
+        bt.el.style.transform = `translate3d(0,${y.toFixed(2)}px,0)`;
+        bt.el.style.filter = o > 0.995 ? 'none' : `blur(${((1 - o) * 10).toFixed(2)}px)`;
+      });
+      if (p >= 1) active = n - 1;
+
+      timelineFill.style.width = (p * 100).toFixed(3) + '%';
+      const label = (p * TIMELINE_SECONDS).toFixed(2).replace(/\.?0+$/, '') + 's';
+      if (label !== lastLabel) {
+        timeLabel.textContent = label;
+        lastLabel = label;
+      }
+      timelineBar.setAttribute('aria-valuenow', Math.round(p * 100));
+
+      if (active !== lastBeat) {
+        dots.forEach((d, i) => {
+          d.classList.toggle('is-active', i === active);
+          if (i === active) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current');
+        });
+        sceneNo.textContent = String(active + 1).padStart(2, '0');
+        lastBeat = active;
+      }
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const bt = beats[+dot.dataset.beat];
+        const top = cine.getBoundingClientRect().top + window.scrollY;
+        const total = cine.offsetHeight - window.innerHeight;
+        const p = bt.a === 0 ? 0 : bt.a + (bt.b - bt.a) * 0.4;
+        window.scrollTo({ top: top + total * p, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+
+    /* ---------------- Canvas petals ---------------- */
+    const petalCanvas = document.getElementById('petalCanvas');
+    const ctx = petalCanvas.getContext('2d');
+    let W = 0, H = 0, PDPR = 1;
+    let windAmt = 0;
+    const PETAL_COUNT = 70;
+    const petals = [];
+
+    function sizePetals() {
+      PDPR = Math.min(window.devicePixelRatio || 1, 2);
+      W = stage.clientWidth;
+      H = stage.clientHeight;
+      petalCanvas.width = Math.round(W * PDPR);
+      petalCanvas.height = Math.round(H * PDPR);
+    }
+
+    function makePetal() {
+      const r = 4 + Math.random() * 14;
+      const a = 0.25 + Math.random() * 0.55;
+      const g = ctx.createRadialGradient(0, 0, 0, 0, 0, r);
+      g.addColorStop(0, `rgba(255,217,232,${a})`);
+      g.addColorStop(0.45, `rgba(245,184,208,${(a * 0.7).toFixed(3)})`);
+      g.addColorStop(1, 'rgba(245,184,208,0)');
+      return {
+        x: Math.random() * W, y: Math.random() * H, r, g,
+        vx: -0.15 + Math.random() * 0.3,
+        vy: 0.15 + Math.random() * 0.45,
+        rot: Math.random() * Math.PI * 2,
+        vr: (Math.random() - 0.5) * 0.02,
+        sway: Math.random() * Math.PI * 2,
+        squash: 0.45 + Math.random() * 0.35
+      };
+    }
+
+    function drawPetals(p, dt) {
+      const wind = p > 0.60 ? (p - 0.60) / 0.40 : 0;
+      windAmt += (wind - windAmt) * 0.06 * dt;
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
+      ctx.globalAlpha = 0.35 + 0.65 * smooth(0.15, 0.6, p);
+
+      for (const q of petals) {
+        if (!reduce) {
+          q.sway += 0.012 * dt;
+          q.x += (q.vx + Math.sin(q.sway) * 0.35 + windAmt * (2.4 + q.r * 0.14)) * dt;
+          q.y += (q.vy - windAmt * 0.18 + Math.cos(q.sway * 0.7) * windAmt * 0.6) * dt;
+          q.rot += (q.vr + windAmt * 0.035) * dt;
+          if (q.x > W + 40) { q.x = -40; q.y = Math.random() * H; }
+          if (q.x < -40) q.x = W + 40;
+          if (q.y > H + 40) { q.y = -40; q.x = Math.random() * W; }
+          if (q.y < -40) q.y = H + 40;
+        }
+        const c = Math.cos(q.rot), s = Math.sin(q.rot);
+        ctx.setTransform(PDPR * c, PDPR * s, -PDPR * s * q.squash, PDPR * c * q.squash, PDPR * q.x, PDPR * q.y);
+        ctx.fillStyle = q.g;
+        ctx.beginPath();
+        ctx.arc(0, 0, q.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function syncPetalSize() {
+      if (stage.clientWidth === W && stage.clientHeight === H) return;
+      const oldW = W, oldH = H;
+      sizePetals();
+      petals.forEach((q) => {
+        if (!oldW || !oldH) { q.x = Math.random() * W; q.y = Math.random() * H; }
+        else { q.x *= W / oldW; q.y *= H / oldH; }
+      });
+    }
+
+    sizePetals();
+    for (let i = 0; i < PETAL_COUNT; i++) petals.push(makePetal());
+
+    let last = performance.now();
+    function loop(now) {
+      const dt = clamp((now - last) / 16.667, 0, 3);
+      last = now;
+      syncPetalSize();
+      const inView = measure();
+      renderP = reduce ? targetP : renderP + (targetP - renderP) * (1 - Math.pow(1 - 0.085, dt));
+      if (Math.abs(targetP - renderP) < 0.00005) renderP = targetP;
+      if (inView) {
+        applyP(renderP);
+        drawPetals(renderP, dt);
+      }
+      requestAnimationFrame(loop);
+    }
+    measure();
+    renderP = targetP;
+    applyP(renderP);
+    requestAnimationFrame(loop);
+
+    /* ---------------- 3D tilt on .fade-card ---------------- */
+    if (finePointer && !reduce) {
+      document.querySelectorAll('.fade-card').forEach((card) => {
+        card.addEventListener('pointermove', (e) => {
+          if (e.pointerType === 'touch' || card.classList.contains('is-playing')) return;
+          const r = card.getBoundingClientRect();
+          const mx = (e.clientX - r.left) / r.width - 0.5;
+          const my = (e.clientY - r.top) / r.height - 0.5;
+          card.classList.add('is-tilting');
+          card.style.transform = `perspective(1000px) rotateX(${(-my * 10).toFixed(2)}deg) rotateY(${(mx * 12).toFixed(2)}deg) scale3d(1.02,1.02,1.02)`;
+          card.style.setProperty('--gx', ((mx + 0.5) * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', ((my + 0.5) * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('pointerleave', () => {
+          card.classList.remove('is-tilting');
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        });
+      });
+    }
+
+    /* ---------------- Example call videos ---------------- */
+    function closePlayer(card) {
+      const player = card.querySelector('.example-player');
+      if (!player) return;
+      player.querySelector('video').pause();
+      player.remove();
+      card.classList.remove('is-playing');
+      card.querySelector('.play-btn').focus();
+    }
+    document.querySelectorAll('.play-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.example-card.is-playing').forEach(closePlayer);
+        const card = btn.closest('.example-card');
+        card.classList.add('is-playing');
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        const player = document.createElement('div');
+        player.className = 'example-player';
+        player.innerHTML = `
+          <video controls playsinline preload="auto" src="${btn.dataset.video}"></video>
+          <button type="button" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#f4f2ef] text-[#050505]" aria-label="Close example">
+            <iconify-icon icon="solar:close-circle-linear" width="22" aria-hidden="true"></iconify-icon>
+          </button>`;
+        card.appendChild(player);
+        const video = player.querySelector('video');
+        player.querySelector('button').addEventListener('click', () => closePlayer(card));
+        video.addEventListener('ended', () => closePlayer(card));
+        video.play().catch(() => {});
+        video.focus();
+      });
+    });
+
+    /* ---------------- Missed revenue calculator ---------------- */
+    const inCalls = document.getElementById('inCalls');
+    const inSale = document.getElementById('inSale');
+    const inClose = document.getElementById('inClose');
+    const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
+    const shown = { week: 1800, month: 7794, year: 93600 };
+    function setFill(el) {
+      el.style.setProperty('--fill', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+    }
+    function calc() {
+      const calls = Math.max(0, +inCalls.value || 0);
+      const sale = clamp(+inSale.value || 0, 0, 10000);
+      const close = (+inClose.value || 0) / 100;
+      const week = calls * sale * close;
+      const next = { week, month: week * 4.33, year: week * 52 };
+      document.getElementById('outCalls').textContent = calls;
+      document.getElementById('outClose').textContent = inClose.value + '%';
+      setFill(inCalls);
+      setFill(inClose);
+      const render = () => {
+        document.getElementById('outWeek').textContent = gbp.format(shown.week);
+        document.getElementById('outMonth').textContent = gbp.format(shown.month);
+        document.getElementById('outYear').textContent = gbp.format(shown.year);
+      };
+      if (window.gsap && !reduce) {
+        gsap.to(shown, { ...next, duration: 0.5, ease: 'power3.out', overwrite: true, onUpdate: render });
+      } else {
+        Object.assign(shown, next);
+        render();
+      }
+    }
+    [inCalls, inSale, inClose].forEach((el) => el.addEventListener('input', calc));
+    setFill(inCalls);
+    setFill(inClose);
+
+    /* ---------------- Channel tabs ---------------- */
+    const tabs = [...document.querySelectorAll('#channelTabs [role="tab"]')];
+    const channelCard = document.querySelector('.channel-card');
+    let channelsInView = false;
+    function activePanel() {
+      const t = tabs.find((x) => x.getAttribute('aria-selected') === 'true');
+      return document.getElementById(t.getAttribute('aria-controls'));
+    }
+    function syncChannelVideo() {
+      document.querySelectorAll('.channel-video').forEach((v) => {
+        const inActive = v.closest('[role="tabpanel"]') === activePanel();
+        if (inActive && channelsInView && !reduce) v.play().catch(() => {});
+        else v.pause();
+      });
+    }
+    function selectTab(tab, focus) {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+      syncChannelVideo();
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => selectTab(tab, false));
+      tab.addEventListener('keydown', (e) => {
+        let j = null;
+        if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') j = 0;
+        if (e.key === 'End') j = tabs.length - 1;
+        if (j !== null) { e.preventDefault(); selectTab(tabs[j], true); }
+      });
+    });
+    new IntersectionObserver((entries) => {
+      channelsInView = entries[0].isIntersecting;
+      syncChannelVideo();
+    }, { threshold: 0.25 }).observe(channelCard);
+
+    /* ---------------- Explainer video ---------------- */
+    const explainer = document.getElementById('explainerVideo');
+    const explainerPlay = document.getElementById('explainerPlay');
+    const conn = navigator.connection || {};
+    // The file is ~99MB: silent preview only on larger screens with a decent connection
+    const previewOK = !reduce && !conn.saveData && !/2g$/.test(conn.effectiveType || '') &&
+      window.matchMedia('(min-width: 768px)').matches;
+    let explainerInView = false;
+    let explainerWithSound = false;
+
+    function syncExplainer() {
+      if (explainerWithSound) {
+        if (!explainerInView && !explainer.paused) explainer.pause();
+        return;
+      }
+      if (previewOK && explainerInView) explainer.play().catch(() => {});
+      else explainer.pause();
+    }
+    explainerPlay.addEventListener('click', () => {
+      explainerWithSound = true;
+      explainerPlay.hidden = true;
+      explainer.loop = false;
+      explainer.muted = false;
+      explainer.controls = true;
+      explainer.currentTime = 0;
+      explainer.play().catch(() => {});
+      explainer.focus();
+    });
+    explainer.addEventListener('ended', () => {
+      explainerWithSound = false;
+      explainer.controls = false;
+      explainer.muted = true;
+      explainer.loop = true;
+      explainerPlay.hidden = false;
+      syncExplainer();
+    });
+    new IntersectionObserver((entries) => {
+      explainerInView = entries[0].isIntersecting;
+      syncExplainer();
+    }, { threshold: 0.35 }).observe(explainer);
+
+    /* ---------------- Magnetic nav + footer links ---------------- */
+    if (finePointer && !reduce && window.gsap) {
+      document.querySelectorAll('nav a, nav button, footer a').forEach((el) => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          const mx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+          const my = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+          gsap.to(el, { x: mx * 6, y: my * 4, duration: 0.35, ease: 'power3.out' });
+        });
+        el.addEventListener('pointerleave', () => {
+          gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.4)' });
+        });
+      });
+    }
+
+    /* ---------------- Mobile menu ---------------- */
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const setMenu = (open) => {
+      mobileMenu.hidden = !open;
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.hidden));
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !mobileMenu.hidden) { setMenu(false); menuBtn.focus(); } });
+
+    /* ---------------- Active nav state ---------------- */
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((l) => {
+          if (l.getAttribute('href') === '#' + entry.target.id) l.setAttribute('aria-current', 'true');
+          else l.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main > section[id]').forEach((el) => io.observe(el));
+
+    /* ---------------- Word split (supports *multi word accents*) ---------------- */
+    const manifesto = document.getElementById('manifestoText');
+    let accentOn = false;
+    manifesto.innerHTML = manifesto.dataset.words.split(' ').map((w) => {
+      if (w.startsWith('*')) accentOn = true;
+      const accent = accentOn;
+      if (/\*[.,—!?]?$/.test(w)) accentOn = false;
+      return `<span class="m-word${accent ? ' accent' : ''}">${w.replace(/\*/g, '')}</span>`;
+    }).join(' ');
+
+    /* ---------------- GSAP ScrollTrigger ---------------- */
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (reduce) {
+      gsap.set('.m-word', { opacity: 1 });
+      return;
+    }
+
+    // Reveal lines
+    document.querySelectorAll('[data-reveal]').forEach((group) => {
+      const spans = group.querySelectorAll('.reveal-line > span');
+      if (!spans.length) return;
+      gsap.from(spans, {
+        yPercent: 120,
+        duration: 1.15,
+        ease: 'expo.out',
+        stagger: 0.09,
+        scrollTrigger: { trigger: group, start: 'top 85%', once: true }
+      });
+    });
+
+    // Example cards: stagger reveal with 3D rotation [-14, 0, 14] -> 0
+    const ROT = [-14, 0, 14];
+    gsap.from('.agent-reveal', {
+      rotationY: (i) => ROT[i % 3],
+      rotationX: 8,
+      y: 90,
+      opacity: 0,
+      transformPerspective: 1000,
+      transformOrigin: '50% 100%',
+      duration: 1.3,
+      ease: 'expo.out',
+      stagger: 0.12,
+      scrollTrigger: { trigger: '#collectionGrid', start: 'top 82%', once: true }
+    });
+
+    gsap.from('.calc-card', {
+      y: 60, opacity: 0, duration: 1.1, ease: 'expo.out',
+      scrollTrigger: { trigger: '.calc-card', start: 'top 85%', once: true }
+    });
+
+    // Explainer: frame grows into place as it scrolls in
+    gsap.fromTo('#explainerFrame', { scale: 0.86, borderRadius: 48 }, {
+      scale: 1, borderRadius: 24, ease: 'none',
+      scrollTrigger: { trigger: '#explainer', start: 'top 95%', end: 'top 35%', scrub: true }
+    });
+
+    // Why ImanLogic: words 0.12 -> 1, then stat count-up
+    gsap.fromTo('#manifestoText .m-word', { opacity: 0.12 }, {
+      opacity: 1,
+      ease: 'none',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '#manifestoText', start: 'top 78%', end: 'bottom 42%', scrub: true }
+    });
+    gsap.from('.why-item', {
+      y: 40, opacity: 0, duration: 1, ease: 'power3.out', stagger: 0.1,
+      scrollTrigger: { trigger: '#whyGrid', start: 'top 85%', once: true }
+    });
+    document.querySelectorAll('.count').forEach((el) => {
+      const obj = { v: 0 };
+      gsap.to(obj, {
+        v: +el.dataset.to, duration: 1.6, ease: 'power3.out',
+        onUpdate: () => { el.textContent = Math.round(obj.v); },
+        scrollTrigger: { trigger: '#whyGrid', start: 'top 85%', once: true }
+      });
+    });
+
+    // CTA band parallax strip
+    gsap.fromTo('#stripImg', { yPercent: -10 }, {
+      yPercent: 10,
+      ease: 'none',
+      scrollTrigger: { trigger: '#parallaxStrip', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+
+    gsap.from('.channel-card', {
+      y: 60, opacity: 0, duration: 1.1, ease: 'expo.out',
+      clearProps: 'transform',
+      scrollTrigger: { trigger: '.channel-card', start: 'top 88%', once: true }
+    });
+
+    // Features board + demo
+    gsap.from('.board-card', {
+      y: 70, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.06,
+      clearProps: 'transform',
+      scrollTrigger: { trigger: '#boardGrid', start: 'top 85%', once: true }
+    });
+    gsap.fromTo('#noema-board .giant', { xPercent: -46 }, {
+      xPercent: -54, ease: 'none',
+      scrollTrigger: { trigger: '#noema-board', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+    gsap.from('.stat-card', {
+      y: 60, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08,
+      clearProps: 'transform',
+      scrollTrigger: { trigger: '.stat-card', start: 'top 88%', once: true }
+    });
+    gsap.fromTo('#noema-support .giant', { xPercent: -54 }, {
+      xPercent: -46, ease: 'none',
+      scrollTrigger: { trigger: '#noema-support', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+
+    gsap.from('.final-card', {
+      y: 60, opacity: 0, scale: 0.97, duration: 1.2, ease: 'expo.out',
+      scrollTrigger: { trigger: '.final-card', start: 'top 88%', once: true }
+    });
+
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+  })();
+  </script>
+</body>
+</html>
